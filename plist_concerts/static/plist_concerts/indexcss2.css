@@ -1,0 +1,76 @@
+body {
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	background-color: white;
+	color: purple;
+}
+
+h1 {
+    color: purple;
+    margin-left: 20px;
+    padding-top: 50px;
+}
+
+[type="text"] 
+{ border: 2px solid purple }
+
+[type="number"] 
+{ border: 2px solid purple }
+
+input {
+	font-size: 17px;
+}
+
+#user {
+	height: 35px;
+	width: 275px;
+}
+
+#email {
+	height: 35px;
+	width: 275px;
+}
+
+
+[type="submit"] {
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding: .5em;
+	background: white;
+	border: 1.5px solid purple
+}
+
+[type="submit"]:hover {
+	background-color: purple;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding: .5em;
+	border: 1.5px solid black
+}
+
+#labs {
+	margin-right: 1em;
+	margin-left: 1em;
+}
+
+/* unvisited link */
+a:link {
+    color: purple;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: purple;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: lightblue;
+    text-decoration: none;
+}
+	

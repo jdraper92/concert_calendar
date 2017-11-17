@@ -1,0 +1,117 @@
+body {
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	background-color: white;
+	color: purple;
+}
+
+h1 {
+    color: purple;
+    margin-left: 20px;
+    padding-top: 50px;
+}
+
+#imagediv {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+
+[type="text"] 
+{ border: 2px solid purple }
+
+[type="number"] 
+{ border: 2px solid purple }
+
+input {
+	font-size: 16px;
+}
+
+#user {
+	height: 35px;
+	width: 250px;
+}
+
+#days {
+	height: 35px;
+	width: 120px;
+}
+
+#songs {
+	height: 35px;
+	width: 250px
+}
+
+
+
+[type="radio"] {
+	border-radius: 1em;
+	border: 0.125em solid #fff;
+	box-shadow: 0 0 0 0.15em #000;
+}
+
+[type="radio"]:checked {
+  background: red;
+ 
+}
+
+[type="submit"] {
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding: .5em;
+	background: white;
+	border: 1.5px solid purple
+	/*
+	border-radius: 5em;
+	-webkit-border-radius: 5px;
+	*/
+}
+
+[type="submit"]:hover {
+	background-color: purple;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	padding: .5em;
+	border: 1.5px solid black
+	/*
+	border-radius: 5em;
+	-webkit-border-radius: 5px;
+	*/
+}
+
+#rad {
+	margin-right: 1.1em;
+	margin-left: 2.8em;
+}
+
+#labs {
+	margin-right: 1em;
+	margin-left: 1em;
+}
+
+#allrads {
+	margin-right: 3em;	
+}
+
+/* unvisited link */
+a:link {
+    color: purple;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: purple;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: lightblue;
+    text-decoration: none;
+}
+	
