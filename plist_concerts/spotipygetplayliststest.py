@@ -73,7 +73,7 @@ def util_new(username, scope=None, client_id = None,client_secret = None, redire
             c = 1
             #infinite loop motherfucker
 
-        c = sp_oauth.parse_response_code('localhost:8000/artistcal//?code=' + str(code))
+        c = sp_oauth.parse_response_code('localhost:5000/artistcal//?code=' + str(code)) #DOES THIS NEED TO CHANGE WITH FINAL COMMIT?
 
         token_info = sp_oauth.get_access_token(c)
         # Auth'ed API request
