@@ -1,0 +1,19 @@
+<html>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'plist_concerts/aftercss.css'%}">
+
+<center>
+<h1>Here are your upcoming concerts:</h1>
+<br>
+
+{% for concert in concerts %}
+	<p> {{ concert.0 }} -- {{ concert.1 }} -- {{ concert.2 }} </p>
+{% endfor %}
+
+<br>
+
+
+<a href = "{% url 'muscal:index' %}">Build more</a>
+
+</center>
+</html>

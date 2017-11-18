@@ -1,0 +1,56 @@
+<html>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'plist_concerts/indexcss2.css'%}">
+<center>
+
+
+<h1><a href = "http://www.spotify.com">Spotify</a> Playlist Artist Calendar</h1>
+
+
+<br>
+
+<form action="{%url 'muscal:submit' %}" method="post">
+{% csrf_token %}
+
+<input type = "text" name = "user" placeholder = "Spotify Username" id = "user"> 
+<br>
+<br>
+<br>
+
+<input type="text" name="email" placeholder = "Email Address" id = "email">
+
+
+<br>
+<br>
+<br>
+<!--
+<div>
+<label for = "day" id = "labs">Day</label>
+<label for = "week" id = "labs">Week</label>
+<label for = "month" id = "labs">Month</label>
+<label for = "year" id = "labs">Year</label>
+<label for = "alltime" id = "labs">All Time</label>
+</div>
+
+<br>
+<div id = "allrads">
+<input type = "radio" name = "songs" value = "day" id = "rad">
+<input type = "radio" name = "songs" value = "week" id = "rad">
+<input type = "radio" name = "songs" value = "month" id = "rad">
+<input type = "radio" name = "songs" value = "year" id = "rad">
+<input type = "radio" name = "songs" value = "all time" id = "rad">
+</div>
+
+<br>
+<br>
+<br>
+-->
+<input type="submit" value="submit" />
+
+</form>
+
+<br>
+<br>
+
+</center>
+</html>

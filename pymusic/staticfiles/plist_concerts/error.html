@@ -1,0 +1,13 @@
+<html>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'plist_concerts/code.css'%}">
+
+<center>
+<h1>something went wrong and we weren't able to build your playlist. </h1>
+<br>
+<br>
+
+<a href = "{% url 'muscal:index' %}">try again</a>
+
+</center>
+</html>
