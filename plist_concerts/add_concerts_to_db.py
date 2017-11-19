@@ -1,6 +1,6 @@
 import datetime
-from models import TimeKeeper
-import get_concert_data as gcd
+from .models import TimeKeeper
+from . import get_concert_data as gcd
 
 def main():
     today = datetime.date.today()

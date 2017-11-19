@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import urllib2
 import datetime
 from .models import Artists, TimeKeeper
-import get_concert_data as gcd
+from . import get_concert_data as gcd
 
 today = datetime.date.today()
 dates = []

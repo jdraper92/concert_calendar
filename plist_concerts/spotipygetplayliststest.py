@@ -6,9 +6,9 @@ import spotipy.util as util
 import spotipy.oauth2 as oauth2
 import webbrowser
 import datetime
-from models import User, TimeKeeper, Artists
-import get_concert_data as gcd
-import add_concerts_to_db as actb
+from .models import User, TimeKeeper, Artists
+from . import get_concert_data as gcd
+from . import add_concerts_to_db as actb
 import json
 
 lock = True
