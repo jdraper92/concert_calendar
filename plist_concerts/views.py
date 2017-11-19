@@ -5,7 +5,7 @@ from django.views import generic
 from django.utils import timezone
 #from .models import User
 #from django import forms
-import spotipygetplayliststest as sgp
+from . import spotipygetplayliststest as sgp
 
 # Create your views here
 def index(request):
