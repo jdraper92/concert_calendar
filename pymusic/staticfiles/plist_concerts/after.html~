@@ -1,6 +1,6 @@
 <html>
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% staticfiles 'plist_concerts/aftercss.css'%}">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'pymusic/aftercss.css'%}">
 
 <center>
 <h1>Here are your upcoming concerts:</h1>

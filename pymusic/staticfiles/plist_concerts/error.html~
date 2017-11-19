@@ -1,6 +1,6 @@
 <html>
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% staticfiles 'plist_concerts/code.css'%}">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'pymusic/code.css'%}">
 
 <center>
 <h1>something went wrong and we weren't able to build your playlist. </h1>

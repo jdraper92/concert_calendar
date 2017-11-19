@@ -1,0 +1,17 @@
+<html>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'redspot/code.css'%}">
+
+<div id = "imagediv" class = "imagediv">
+<img src = "{% static 'redspot/redditlogo.jpg' %}" id = "imagediv">
+</div>
+
+<center>
+<h1>something went wrong and we weren't able to build your playlist. </h1>
+<br>
+<br>
+
+<a href = "{% url 'spot:index' %}">try again</a>
+
+</center>
+</html>

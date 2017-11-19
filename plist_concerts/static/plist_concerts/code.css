@@ -1,0 +1,42 @@
+body {
+	background-color: white;
+	color: purple;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+#imagediv {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+
+h1 {
+    color: purple;
+    margin-left: 20px;
+    padding-top: 50px;
+}
+
+/* unvisited link */
+a:link {
+    color: purple;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: purple;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: purple;
+    text-decoration: none;
+}

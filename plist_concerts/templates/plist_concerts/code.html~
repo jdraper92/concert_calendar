@@ -1,6 +1,6 @@
 <html>
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% staticfiles 'plist_concerts/code.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'plist_concerts/code.css'%}">
 
 <center>
 <h1>you can close out this tab, the playlist is being built</h1>

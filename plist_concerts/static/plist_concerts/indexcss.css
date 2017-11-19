@@ -1,0 +1,118 @@
+body {
+	height: 100%;
+	font-family: "Lucida Console", Monaco, monospace;
+    background: rgba(147,206,222,1);
+    background: -moz-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+    background: -webkit-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -o-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -ms-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: linear-gradient(to right, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+}
+
+
+h1 {
+    color: black;
+    margin-left: 20px;
+    padding-top: 50px;
+}
+
+#rightdiv {
+	background-color: white;
+	float: right;
+	height: 100%;
+	width: 200px
+}
+
+#leftdiv {
+	background-color: white;
+	float: left;
+	height: 100%;
+	width: 200px
+}
+
+[type="text"] 
+{ border: 2px solid black }
+
+[type="number"] 
+{ border: 2px solid black }
+
+input {
+	font-size: 16px;
+}
+
+#user {
+	height: 35px;
+	width: 250px;
+}
+
+#time {
+	height: 35px;
+	width: 250px;
+}
+
+#songs {
+	height: 35px;
+	width: 100px
+}
+
+
+
+[type="radio"] {
+	border-radius: 1em;
+	border: 0.125em solid #fff;
+	box-shadow: 0 0 0 0.15em #000;
+}
+
+[type="radio"]:checked {
+  background: red;
+ 
+}
+
+[type="submit"] {
+	font-family: "Lucida Console", Monaco, monospace;
+	padding: .5em;
+	background: white;
+	border-radius: 5em;
+	-webkit-border-radius: 5px;
+}
+
+#rad {
+	margin-right: 1.1em;
+	margin-left: 3em;
+}
+
+#labs {
+	margin-right: 1em;
+	margin-left: 1em;
+}
+
+#allrads {
+	margin-right: 4em;	
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: black;
+    text-decoration: none;
+}
+	
