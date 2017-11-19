@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import urllib2
+import urllib3
 import datetime
 from .models import Artists,TimeKeeper
 
@@ -28,8 +28,9 @@ class BandInfo:
     #returns a tuple with each band/concert location for that day
     def getFromSongkick(self):
         url = self.makeUrl()
-        page = urllib2.urlopen(url).read()
-        soup = BeautifulSoup(page, 'html.parser')
+        #page = urllib2.urlopen(url).read()
+        response = http.request('GET', url)
+        soup = BeautifulSoup(response.data)
         try:
             test = soup.find(text = self.formatted_date)
             locations = test.findAllNext('span', attrs = {'class': ['location'], 'class': ['venue-name']})
