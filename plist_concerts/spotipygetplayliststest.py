@@ -92,6 +92,7 @@ def getToken(c):
     lock = False
 
 def main(username,email):
+    print('here222')
     actb.main()
     returning_user = User.objects.filter(username = username).exists()
     today = datetime.date.today()

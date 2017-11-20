@@ -23,9 +23,9 @@ def submit(request):
     #error check to make sure user put in all info
     if not username or not email:
         return HttpResponseRedirect(reverse('muscal:index'))
-
+    print('here111')
     (concerts,run_check) = sgp.main(username,email)
-
+    print('here333')
     if not run_check:
         return HttpResponseRedirect(reverse('muscal:error'))
 
