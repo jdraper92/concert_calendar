@@ -92,8 +92,7 @@ def getToken(c):
     lock = False
 
 def main(username,email):
-    print('here222')
-    actb.main()
+    #actb.main() don't want to call this for everyone because it takes too long
     returning_user = User.objects.filter(username = username).exists()
     today = datetime.date.today()
 
@@ -102,7 +101,7 @@ def main(username,email):
         jsonDec = json.decoder.JSONDecoder()
 
         last_update = datetime.datetime.strptime(returning_user.last_update, '%m%d%Y')
-        if today> last_update.date() + datetime.timedelta(days=4):#This is only true if today's date is further in the future than last_update + 30 days aka hasn't been updated in over 30 days
+        if today> last_update.date() + datetime.timedelta(days=10):#This is only true if today's date is further in the future than last_update + 30 days aka hasn't been updated in over 30 days
 
             artists = getPlaylists(returning_user.username)
             returning_user.artists = json.dumps(artists)

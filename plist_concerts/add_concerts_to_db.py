@@ -1,12 +1,12 @@
 import datetime
-from .models import TimeKeeper
+from .models import TimeKeeper, Artists
 from . import get_concert_data as gcd
 
 def main():
     today = datetime.date.today()
     tk = TimeKeeper.objects.filter(id=4)[0]
     last_concert_search = tk.last_date
-    last_concert_search = datetime.datetime.strptime(last_concert_search, '%m%d%Y')
+    
     if today > last_concert_search.date():
         b = gcd.BandInfo()
         for x in range(0,120):
@@ -20,6 +20,15 @@ def main():
         new_last_date = reference.strftime('%m%d%Y') 
         tk.last_date = new_last_date
         tk.save()
+        #below code should delete old concerts that have already happened
+        concerts = Artists.objects.all()
+        for concert in concerts:
+            concert_id = concert.id
+            concert_date = concert.date
+            concert_date_object = datetime.datetime.strptime(concert_date, '%m%d%Y')
+            if today > concert_date_object.date():
+                Artists.objects.filter(id=concert_id).delete()
+            
     
     
     

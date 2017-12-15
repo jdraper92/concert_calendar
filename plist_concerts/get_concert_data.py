@@ -29,6 +29,8 @@ class BandInfo:
     def getFromSongkick(self):
         url = self.makeUrl()
         #page = urllib2.urlopen(url).read()
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        http = urllib3.PoolManager()
         response = http.request('GET', url)
         soup = BeautifulSoup(response.data)
         try:
