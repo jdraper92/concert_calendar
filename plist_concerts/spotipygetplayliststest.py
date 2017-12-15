@@ -92,11 +92,13 @@ def getToken(c):
     lock = False
 
 def main(username,email):
+    print('here111111')
     #actb.main() don't want to call this for everyone because it takes too long
     returning_user = User.objects.filter(username = username).exists()
     today = datetime.date.today()
 
     if returning_user:
+        print('here222222')
         returning_user = User.objects.filter(username = username)[0]
         jsonDec = json.decoder.JSONDecoder()
 
@@ -108,6 +110,7 @@ def main(username,email):
             returning_user.last_update = today.strftime('%m%d%Y') #changed to strftime from strptime
             returning_user.save()
         else:
+            print('here33333')
             artists = jsonDec.decode(returning_user.artists)
     else:
         artists = getPlaylists(username)
@@ -126,7 +129,7 @@ def main(username,email):
              matches[date] = [(artist,location)]
         except (KeyError,AttributeError,IndexError):
             continue
-
+    print('here444444')
     matches_list = []
     for key in matches:
         for concert in matches[key]:
