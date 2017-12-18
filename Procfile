@@ -1,2 +1,2 @@
 web: gunicorn pymusic.wsgi --log-file -
-worker: python worker.py
+worker: python plist_concerts/worker.py
