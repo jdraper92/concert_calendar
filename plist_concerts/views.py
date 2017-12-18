@@ -14,11 +14,9 @@ def index(request):
         return code(request, c)
     else:
         #you don't need to include a dictionary
-        print('hereeeeeeee123')
         return render(request, 'plist_concerts/index.html')
 
 def submit(request):
-    print('here45666666')
     username = request.POST.get('user', False)
     email = request.POST.get('email', False)
 

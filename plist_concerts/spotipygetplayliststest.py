@@ -10,6 +10,8 @@ from .models import User, TimeKeeper, Artists
 from . import get_concert_data as gcd
 from . import add_concerts_to_db as actb
 import json
+from rq import Queue
+from .worker import conn
 
 lock = True
 code = None
@@ -64,10 +66,11 @@ def util_new(username, scope=None, client_id = None,client_secret = None, redire
 
     if not token_info:
         auth_url = sp_oauth.get_authorize_url()
-        ##        q = Queue(connection=conn)
-        ##        job = q.enqueue(webbrowser.open, auth_url)
+        print('2222222222')
+        q = Queue(connection=conn)
+        c = q.enqueue(goToSpotify, auth_url)
         #goToSpotify(auth_url)
-        webbrowser.open(auth_url)
+##        webbrowser.open(auth_url)
         global lock
         while lock:
             c = 1
@@ -92,19 +95,17 @@ def getToken(c):
     lock = False
 
 def main(username,email):
-    print('here111111')
     #actb.main() don't want to call this for everyone because it takes too long
     returning_user = User.objects.filter(username = username).exists()
     today = datetime.date.today()
 
     if returning_user:
-        print('here222222')
         returning_user = User.objects.filter(username = username)[0]
         jsonDec = json.decoder.JSONDecoder()
 
         last_update = datetime.datetime.strptime(returning_user.last_update, '%m%d%Y')
         if today> last_update.date() + datetime.timedelta(days=30):#This is only true if today's date is further in the future than last_update + 30 days aka hasn't been updated in over 30 days
-
+            print('here111111111')
             artists = getPlaylists(returning_user.username)
             returning_user.artists = json.dumps(artists)
             returning_user.last_update = today.strftime('%m%d%Y') #changed to strftime from strptime
@@ -129,7 +130,7 @@ def main(username,email):
              matches[date] = [(artist,location)]
         except (KeyError,AttributeError,IndexError):
             continue
-    print('here444444')
+    print('here55555')
     matches_list = []
     for key in matches:
         for concert in matches[key]:
@@ -143,6 +144,8 @@ def main(username,email):
         matches_list2 += [(d.strftime('%m%d%Y'),a,l)]
     return (matches_list2, True)
 
-
-
+def goToSpotify(auth_url):
+    webbrowser.open(auth_url)
+    print('444444444')
+    return 1
     
