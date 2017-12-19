@@ -12,6 +12,7 @@ from . import add_concerts_to_db as actb
 import json
 from rq import Queue
 from .worker import conn
+from .auth import goToSpotify
 
 lock = True
 code = None
@@ -68,7 +69,7 @@ def util_new(username, scope=None, client_id = None,client_secret = None, redire
         auth_url = sp_oauth.get_authorize_url()
         print('2222222222')
         q = Queue(connection=conn)
-        c = q.enqueue(goToSpotify, auth_url)
+        w = q.enqueue(goToSpotify, auth_url)
         #goToSpotify(auth_url)
 ##        webbrowser.open(auth_url)
         global lock
@@ -144,8 +145,4 @@ def main(username,email):
         matches_list2 += [(d.strftime('%m%d%Y'),a,l)]
     return (matches_list2, True)
 
-def goToSpotify(auth_url):
-    webbrowser.open(auth_url, new=1)
-    print('444444444')
-    return 1
     
