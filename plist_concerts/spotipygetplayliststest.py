@@ -145,7 +145,7 @@ def main(username,email):
     return (matches_list2, True)
 
 def goToSpotify(auth_url):
-    webbrowser.open(auth_url)
+    webbrowser.open(auth_url, new=1)
     print('444444444')
     return 1
     
