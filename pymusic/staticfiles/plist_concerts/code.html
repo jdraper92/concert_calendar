@@ -3,9 +3,9 @@
 <link rel="stylesheet" type="text/css" href="{% staticfiles 'plist_concerts/code.css'%}">
 
 <center>
-<h1>you can close out this tab, the playlist is being built</h1>
+<h1>Please go to the provided link to allow this app to access your Spotify playlists</h1>
 <br>
-<br>
+<a href = "{% auth_url %}" target="_blank"> {% auth_url %} </a>
 
 </center>
 </html>

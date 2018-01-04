@@ -1,5 +1,5 @@
 <html>
-{% load staticfiles %}
+{% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'plist_concerts/aftercss.css'%}">
 
 <center>
