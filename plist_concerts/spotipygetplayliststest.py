@@ -19,10 +19,7 @@ class GetPlaylists():
     def __init__(self,username,email):
         self.username=username
         self.email = email
-        self.client_id= os.environ['SPOTIPY_CLIENT_ID']
-        self.client_secret =os.environ['SPOTIPY_CLIENT_SECRET']
-        self.redirect_uri =os.environ['SPOTIPY_REDIRECT_URI']
-        self.sp_oauth = oauth2.SpotifyOAuth(self.client_id, self.client_secret, self.redirect_uri, 
+        self.sp_oauth = oauth2.SpotifyOAuth(os.environ['SPOTIPY_CLIENT_ID'], os.environ['SPOTIPY_CLIENT_SECRET'], os.environ['SPOTIPY_REDIRECT_URI'], 
         scope=None, cache_path=None)
         
     def make_artist_list(self,tracks):
@@ -69,7 +66,7 @@ class GetPlaylists():
         return auth_url
 
     def tokenReceived(self,code):
-        c = self.sp_oauth.parse_response_code(self.redirect_uri + '/?code=' + str(code)) #DOES THIS NEED TO CHANGE WITH FINAL COMMIT?
+        c = self.sp_oauth.parse_response_code(os.environ['SPOTIPY_REDIRECT_URI'] + '/?code=' + str(code)) #DOES THIS NEED TO CHANGE WITH FINAL COMMIT?
         token_info = self.sp_oauth.get_access_token(c)
         token = token_info['access_token']
         self.getSpotifyPlaylists(token)
