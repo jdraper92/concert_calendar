@@ -10,7 +10,6 @@ from . import get_concert_data as gcd
 from . import add_concerts_to_db as actb
 import json
 
-
 lock = True
 code = None
 class GetPlaylists():
@@ -69,7 +68,10 @@ class GetPlaylists():
         token = token_info['access_token']
         self.getSpotifyPlaylists(token)
         concerts = self.getConcerts()
-        return (concerts,True)
+        if len(concerts) == 0:
+            return(concerts,False)
+        else:
+            return (concerts,True)
         
     def getSpotifyPlaylists(self,token):
         today = datetime.date.today()
@@ -120,10 +122,11 @@ class GetPlaylists():
                 d = datetime.datetime.strptime(key, '%m%d%Y') # changed #have to convert to date object to sort them
                 matches_list += [(d,a,l)]
                 matches_list = sorted(matches_list)
-                matches_list2 = []
+        matches_list2 = []
         for x in matches_list:
             (d,a,l) = x
             matches_list2 += [(d.strftime('%m%d%Y'),a,l)]
-        return matches_list2
+            return matches_list2
+        return 
 
     
