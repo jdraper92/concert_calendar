@@ -126,7 +126,7 @@ class GetPlaylists():
         for x in matches_list:
             (d,a,l) = x
             matches_list2 += [(d.strftime('%m%d%Y'),a,l)]
-            return matches_list2
-        return 
+
+        return matches_list2 
 
     
