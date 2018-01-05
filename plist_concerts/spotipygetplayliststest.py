@@ -9,9 +9,7 @@ from .models import User, TimeKeeper, Artists
 from . import get_concert_data as gcd
 from . import add_concerts_to_db as actb
 import json
-from rq import Queue
-from .worker import conn
-from .auth import goToSpotify
+
 
 lock = True
 code = None
