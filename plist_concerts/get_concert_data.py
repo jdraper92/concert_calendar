@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import urllib3
 import datetime
 from .models import Artists,TimeKeeper
+import threading
 
 class BandInfo:
     def __init__(self):

@@ -63,8 +63,9 @@ class GetPlaylists():
         return auth_url
 
     def tokenReceived(self,code):
-        c = self.sp_oauth.parse_response_code(os.environ['SPOTIPY_REDIRECT_URI'] + '/?code=' + str(code)) #DOES THIS NEED TO CHANGE WITH FINAL COMMIT?
-        token_info = self.sp_oauth.get_access_token(c)
+        print(code)
+        #c = self.sp_oauth.parse_response_code(os.environ['SPOTIPY_REDIRECT_URI'] + '/?code=' + str(code)) #DOES THIS NEED TO CHANGE WITH FINAL COMMIT?
+        token_info = self.sp_oauth.get_access_token(code)
         token = token_info['access_token']
         self.getSpotifyPlaylists(token)
         concerts = self.getConcerts()
@@ -94,12 +95,13 @@ class GetPlaylists():
         if returning_user:
             returning_user = User.objects.filter(username = self.username)[0]
             last_update = datetime.datetime.strptime(returning_user.last_update, '%m%d%Y')
-            if today <  last_update.date() + datetime.timedelta(days=30):#This is only true if today's date is less than 30 days past last update 
+            if today <  last_update.date() + datetime.timedelta(days=10):#changed from 30 to 10#This is only true if today's date is less than 30 days past last update 
                 return True
 
         return False
 
     def getConcerts(self):
+        actb.main() #for updating concerts
         returning_user = User.objects.filter(username = self.username)[0]
         jsonDec = json.decoder.JSONDecoder()
         artists = jsonDec.decode(returning_user.artists)

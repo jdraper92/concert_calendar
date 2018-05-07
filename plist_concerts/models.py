@@ -15,3 +15,4 @@ class Artists(models.Model):
 class TimeKeeper(models.Model):
     first_date = models.CharField(max_length=10)
     last_date  = models.CharField(max_length=10)
+    last_accessed = models.CharField(max_length=10,default = '05052018')
